@@ -22,8 +22,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #2a2c39; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #d7ad6c
-
+  --accent-color: #f9cb7d
 ; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -32,14 +31,12 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #d7ad6c
-
+  --nav-hover-color: #f9cb7d
 ; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #060606; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #d7ad6c
-
+  --nav-dropdown-hover-color: #f9cb7d
 ; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
@@ -1014,22 +1011,54 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-.services .service-item {
+.services {
   background-color: var(--surface-color);
   box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
   padding: 60px 30px 60px 70px;
   transition: all ease-in-out 0.3s;
-  border-radius: 18px;
   height: 100%;
-  position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.service-item{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background-color: #fff;
+  box-shadow:  2px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px; /* Optional: Adds rounded corners */
+  padding: 20px;
+  height: 250px;
+  
+}
+.services .service-item h3 {
+  font-weight: 700;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+  transition: ease-in-out 0.3s;
 }
 
-.services .service-item .icon {
-  position: absolute;
-  left: -20px;
-  top: calc(50% - 30px);
+@media (max-width: 768px) {
+  .services{
+    padding : 0
+  }
+  .service-item{
+    gap:20px;
+    width: 100%;
+    text-wrap: wrap;
+  }
+   .service-item h3{
+    font-size: 18px !important;
+    text-wrap: wrap;
+   }
 }
+
+
+
+
 
 .services .service-item .icon i {
   font-size: 64px;
@@ -1037,12 +1066,7 @@ section,
   transition: 0.5s;
 }
 
-.services .service-item h3 {
-  font-weight: 700;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
-  transition: ease-in-out 0.3s;
-}
+
 
 .services .service-item p {
   line-height: 24px;
